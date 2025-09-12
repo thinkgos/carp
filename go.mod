@@ -10,7 +10,7 @@ require (
 	golang.org/x/tools v0.36.0
 	google.golang.org/protobuf v1.36.7
 	gorm.io/datatypes v1.2.6
-	gorm.io/gorm v1.30.1
+	gorm.io/gorm v1.31.0
 	gorm.io/plugin/soft_delete v1.2.1
 )
 
@@ -42,5 +42,4 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.5.7 // indirect
-	gorm.io/driver/sqlite v1.5.2 // indirect
 )

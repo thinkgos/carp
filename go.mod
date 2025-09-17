@@ -1,9 +1,9 @@
 module github.com/thinkgos/carp
 
-go 1.24.0
+go 1.24.6
 
 require (
-	ariga.io/atlas v0.36.1
+	ariga.io/atlas v0.37.0
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/pingcap/tidb/parser v0.0.0-20231013125129-93a834a6bf8d
 	github.com/xwb1989/sqlparser v0.0.0-20180606152119-120387863bf2

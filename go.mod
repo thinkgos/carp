@@ -3,7 +3,7 @@ module github.com/thinkgos/carp
 go 1.24.6
 
 require (
-	ariga.io/atlas v0.37.0
+	ariga.io/atlas v0.38.0
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/pingcap/tidb/parser v0.0.0-20231013125129-93a834a6bf8d
 	github.com/xwb1989/sqlparser v0.0.0-20180606152119-120387863bf2
@@ -38,7 +38,7 @@ require (
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/mod v0.29.0 // indirect
 	golang.org/x/sync v0.17.0 // indirect
-	golang.org/x/text v0.25.0 // indirect
+	golang.org/x/text v0.28.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.5.7 // indirect

@@ -107,6 +107,8 @@ func (g *CodeGen) Gen() *CodeGen {
 	for _, et := range g.Entities {
 		structName := utils.PascalCase(et.Name)
 		tableName := et.Name
+		g.Printf("const %s_TableName = \"%s\"", structName, tableName)
+		g.Println()
 		g.Printf("// %s %s\n", structName, strings.ReplaceAll(strings.TrimSpace(et.Comment), "\n", "\n// ")) // nolint: errcheck
 		g.Printf("type %s struct {\n", structName)                                                           // nolint: errcheck
 		for _, field := range et.Fields {

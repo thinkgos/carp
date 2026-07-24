@@ -2,7 +2,7 @@ module github.com/thinkgos/carp/cmd/ormat
 
 go 1.26.4
 
-// replace github.com/thinkgos/carp => ../..
+replace github.com/thinkgos/carp => ../..
 
 require (
 	ariga.io/atlas v1.2.3

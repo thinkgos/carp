@@ -2,7 +2,6 @@ package carp
 
 import (
 	"github.com/thinkgos/carp/proto"
-	"github.com/thinkgos/carp/rapier"
 	"google.golang.org/protobuf/reflect/protoreflect"
 )
 
@@ -36,15 +35,5 @@ func (field *FieldDescriptor) IntoProto() *proto.MessageField {
 		Name:        field.ColumnName,
 		ColumnName:  field.ColumnName,
 		Comment:     field.Comment,
-	}
-}
-
-func (field *FieldDescriptor) IntoRapier() *rapier.StructField {
-	return &rapier.StructField{
-		Type:       field.Type.Type.IntoRapierType(),
-		GoName:     field.GoName,
-		Nullable:   field.Nullable,
-		ColumnName: field.ColumnName,
-		Comment:    field.Comment,
 	}
 }

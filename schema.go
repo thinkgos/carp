@@ -2,7 +2,6 @@ package carp
 
 import (
 	"github.com/thinkgos/carp/proto"
-	"github.com/thinkgos/carp/rapier"
 	"github.com/thinkgos/carp/sqlx"
 )
 
@@ -18,17 +17,6 @@ func (s *Schema) IntoProto() *proto.Schema {
 		entities = append(entities, entity.IntoProto())
 	}
 	return &proto.Schema{
-		Name:     s.Name,
-		Entities: entities,
-	}
-}
-
-func (s *Schema) IntoRapier() *rapier.Schema {
-	entities := make([]*rapier.Struct, 0, len(s.Entities))
-	for _, entity := range s.Entities {
-		entities = append(entities, entity.IntoRapier())
-	}
-	return &rapier.Schema{
 		Name:     s.Name,
 		Entities: entities,
 	}

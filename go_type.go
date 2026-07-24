@@ -4,7 +4,6 @@ import (
 	"reflect"
 	"slices"
 
-	"github.com/thinkgos/carp/rapier"
 	"github.com/thinkgos/carp/utils"
 	"google.golang.org/protobuf/reflect/protoreflect"
 )
@@ -139,55 +138,6 @@ func (t Type) IntoProtoKind() (k protoreflect.Kind, n string) {
 		n = k.String()
 	}
 	return k, n
-}
-
-func (t Type) IntoRapierType() rapier.Type {
-	switch t { // nolint: exhaustive
-	case TypeBool:
-		return rapier.Bool
-	case TypeInt8:
-		return rapier.Int8
-	case TypeInt16:
-		return rapier.Int16
-	case TypeInt32:
-		return rapier.Int32
-	case TypeInt64:
-		return rapier.Int64
-	case TypeInt:
-		return rapier.Int
-	case TypeUint8:
-		return rapier.Uint8
-	case TypeUint16:
-		return rapier.Uint16
-	case TypeUint32:
-		return rapier.Uint32
-	case TypeUint64:
-		return rapier.Uint64
-	case TypeUint:
-		return rapier.Uint
-	case TypeFloat32:
-		return rapier.Float32
-	case TypeFloat64:
-		return rapier.Float64
-	case TypeString:
-		return rapier.String
-	case TypeEnum:
-		return rapier.Enum
-	case TypeDecimal:
-		return rapier.Decimal
-	case TypeBytes:
-		return rapier.Bytes
-	case TypeTime:
-		return rapier.Time
-	case TypeJSON:
-		return rapier.JSON
-	case TypeUUID:
-		return rapier.UUID
-	case TypeOther:
-		fallthrough
-	default:
-		return rapier.Field
-	}
 }
 
 type GoType struct {

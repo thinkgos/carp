@@ -7,6 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/thinkgos/carp/cmd/ormat/command/cxx"
 	_ "github.com/thinkgos/carp/driver/mysql"
 )
 
@@ -40,7 +41,7 @@ func NewRootCmd() *RootCmd {
 		newSqlCmd().cmd,
 		newModelCmd().cmd,
 		newProtoCmd().cmd,
-		newRapierCmd().cmd,
+		cxx.NewDalCmd().Cmd,
 	)
 	root.cmd = cmd
 	return root

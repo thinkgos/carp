@@ -2,9 +2,7 @@ package carp
 
 import (
 	"github.com/thinkgos/carp/proto"
-	"github.com/thinkgos/carp/rapier"
 	"github.com/thinkgos/carp/sqlx"
-	"github.com/thinkgos/carp/utils"
 )
 
 // EntityDescriptor Each table corresponds to an EntityDescriptor
@@ -24,18 +22,6 @@ func (s *EntityDescriptor) IntoProto() *proto.Message {
 	}
 	return &proto.Message{
 		Name:      s.Name,
-		TableName: s.Name,
-		Comment:   s.Comment,
-		Fields:    fields,
-	}
-}
-func (s *EntityDescriptor) IntoRapier() *rapier.Struct {
-	fields := make([]*rapier.StructField, 0, len(s.Fields))
-	for _, field := range s.Fields {
-		fields = append(fields, field.IntoRapier())
-	}
-	return &rapier.Struct{
-		GoName:    utils.PascalCase(s.Name),
 		TableName: s.Name,
 		Comment:   s.Comment,
 		Fields:    fields,

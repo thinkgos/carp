@@ -5,7 +5,6 @@ import (
 	"gorm.io/gorm/clause"
 )
 
-
 func NilOrEmpty[T any](slices []T) []T {
 	if slices == nil {
 		return make([]T, 0)

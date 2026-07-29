@@ -47,7 +47,7 @@ func New{{$stName}}(db *gorm.DB) {{$stName}}Dal {
 }
 
 func (b {{$stName}}) Create(ctx context.Context, v ...*{{$mdName}}) error {
-    return gorm.G[*{{$mdName}}](b.db).CreateInBatches(ctx, &v, 200)
+    return gorm.G[*{{$mdName}}](b.db).CreateInBatches(ctx, &v, DefaultBatchSize)
 }
 
 func (b {{$stName}}) Delete(ctx context.Context, id ...int64) (int, error) {

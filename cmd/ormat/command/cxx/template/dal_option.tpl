@@ -5,6 +5,9 @@ import (
 	"gorm.io/gorm/clause"
 )
 
+// 批量插入数据
+const DefaultBatchSize = 500
+
 func NilOrEmpty[T any](slices []T) []T {
 	if slices == nil {
 		return make([]T, 0)

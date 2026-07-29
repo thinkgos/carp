@@ -116,14 +116,14 @@ func (g *CodeGen) intoTypeNameAndAnnotation(field *MessageField) (string, []stri
 	case field.Type == protoreflect.MessageKind && field.TypeName == googleProtobufTimestamp:
 		if g.DisableTimestamp {
 			if g.EnableOpenapiv2Annotation {
-				annotations = append(annotations, `(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { type: [ INTEGER ] }`)
+				annotations = append(annotations, `(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {type: [INTEGER]}`)
 			}
 			return protoreflect.Int64Kind.String(), annotations
 		} else {
 			return field.TypeName, annotations
 		}
 	case (field.Type == protoreflect.Int64Kind || field.Type == protoreflect.Uint64Kind) && g.EnableOpenapiv2Annotation:
-		annotations = append(annotations, `(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { type: [ INTEGER ] }`)
+		annotations = append(annotations, `(grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = {type: [INTEGER]}`)
 		fallthrough
 	default:
 		return field.Type.String(), annotations
